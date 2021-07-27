@@ -19,7 +19,7 @@ variable "lambda_role" {
 variable "lambda_function_name" {
   description = "The name of the Lambda function to create"
   type        = string
-  default     = "notify_slack"
+  default     = "campspot-notify-slack"
 }
 
 variable "lambda_description" {
@@ -93,13 +93,25 @@ variable "cloudwatch_log_group_kms_key_id" {
 variable "tags" {
   description = "A map of tags to add to all resources"
   type        = map(string)
-  default     = {}
+  default     = {
+    name        = "campspot-default-notify",
+    customer    = "campspot",
+    environment = "${terraform.workspace}",
+    costcenter  = "default",
+    application = "default",
+  }
 }
 
 variable "iam_role_tags" {
   description = "Additional tags for the IAM role"
   type        = map(string)
-  default     = {}
+  default     = {
+    name        = "campspot-default-notify-iam-role",
+    customer    = "campspot",
+    environment = "${terraform.workspace}",
+    costcenter  = "default",
+    application = "default",
+  }
 }
 
 variable "iam_role_boundary_policy_arn" {
@@ -117,7 +129,13 @@ variable "iam_role_name_prefix" {
 variable "lambda_function_tags" {
   description = "Additional tags for the Lambda function"
   type        = map(string)
-  default     = {}
+  default     = {
+    name        = "campspot-default-notify-lambda",
+    customer    = "campspot",
+    environment = "${terraform.workspace}",
+    costcenter  = "default",
+    application = "default",
+  }
 }
 
 variable "lambda_function_vpc_subnet_ids" {
@@ -147,13 +165,25 @@ variable "lambda_function_s3_bucket" {
 variable "sns_topic_tags" {
   description = "Additional tags for the SNS topic"
   type        = map(string)
-  default     = {}
+  default     = {
+    name        = "campspot-default-notify-sns",
+    customer    = "campspot",
+    environment = "${terraform.workspace}",
+    costcenter  = "default",
+    application = "default",
+  }
 }
 
 variable "cloudwatch_log_group_tags" {
   description = "Additional tags for the Cloudwatch log group"
   type        = map(string)
-  default     = {}
+  default     = {
+    name        = "campspot-default-notify-logs",
+    customer    = "campspot",
+    environment = "${terraform.workspace}",
+    costcenter  = "default",
+    application = "default",
+  }
 }
 
 variable "subscription_filter_policy" {
