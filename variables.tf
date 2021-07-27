@@ -96,7 +96,7 @@ variable "tags" {
   default     = {
     name        = "campspot-default-notify",
     customer    = "campspot",
-    environment = "${terraform.workspace}",
+    environment = "default",
     costcenter  = "default",
     application = "default",
   }
@@ -108,7 +108,7 @@ variable "iam_role_tags" {
   default     = {
     name        = "campspot-default-notify-iam-role",
     customer    = "campspot",
-    environment = "${terraform.workspace}",
+    environment = "default",
     costcenter  = "default",
     application = "default",
   }
@@ -132,7 +132,7 @@ variable "lambda_function_tags" {
   default     = {
     name        = "campspot-default-notify-lambda",
     customer    = "campspot",
-    environment = "${terraform.workspace}",
+    environment = "default",
     costcenter  = "default",
     application = "default",
   }
@@ -168,7 +168,7 @@ variable "sns_topic_tags" {
   default     = {
     name        = "campspot-default-notify-sns",
     customer    = "campspot",
-    environment = "${terraform.workspace}",
+    environment = "default",
     costcenter  = "default",
     application = "default",
   }
@@ -180,7 +180,7 @@ variable "cloudwatch_log_group_tags" {
   default     = {
     name        = "campspot-default-notify-logs",
     customer    = "campspot",
-    environment = "${terraform.workspace}",
+    environment = "default",
     costcenter  = "default",
     application = "default",
   }
